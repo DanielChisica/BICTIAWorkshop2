@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 2</title>
+</head>
+<body>
+<script>
+    var body = document.body;
+    var content = document.createElement("DIV");
+    content.setAttribute("id","content");
+    body.appendChild(content);
+    var counter=0;
+    var lastID=0;
+    function agregate(){
+        var newDiv=document.createElement("DIV");
+        newDiv.setAttribute("class","divs");
+        counter=counter+1;
+        console.log(counter);
+        if(lastID==0){
+            lastID=counter;
+        } else{
+            lastID=lastID+1;
+        }
+        newDiv.setAttribute("id",lastID);
+        newDiv.innerText="Div "+ lastID;
+        content.appendChild(newDiv)
+    };
+
+    function deleteAll() {
+        document.getElementById("content").innerHTML="";
+        counter=0;
+    };
+
+    function deleteOdds() {
+        var oddsCounter=0;
+        var topBound=content.childNodes[content.childElementCount-1].getAttribute("id");
+        var bottomBound=content.childNodes[0].getAttribute("id");
+        console.log(topBound)
+        console.log(bottomBound)
+        if (bottomBound%2==0){
+            console.log("es par")
+            console.log(bottomBound)
+            bottomBound=parseInt(bottomBound)+1;
+            console.log(bottomBound);
+        }
+        for (var i =parseInt(bottomBound);i<=topBound;i+=2){
+            console.log(i);
+            content.removeChild(document.getElementById(i));
+            oddsCounter=oddsCounter+1;
+        };
+        counter=counter-oddsCounter;
+    };
+
+    function deleteDiv() {
+        var div = prompt("¿Qué div desea eliminar?");
+        content.removeChild(document.getElementById(div));
+        counter=counter-1;
+    };
+</script>
+<center><span><button  onclick="agregate()">Agregar</button></span><span><button onclick="deleteAll()">Eliminar todos</button></span><span>
+    <button onclick="deleteOdds()">Eliminar impares</button></span>
+    <span><button onclick="deleteDiv()">Eliminar especifico</button></span></center>
+</body>
+</html>

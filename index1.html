@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 1</title>
+    <script type="text/javascript" src="Scripts/Punto1.js"></script>
+</head>
+<body>
+<script>
+    let x = document.createElement("VIDEO");
+
+    if (x.canPlayType("video/mp4")) {
+        x.setAttribute("src","Sources/Breaking Bad Fulminated Mercury Complete Scene.mp4");
+    } else {
+        alert("Impossible to load video")
+    }
+    x.setAttribute("id","video1")
+    x.setAttribute("width", "320");
+    x.setAttribute("height", "240");
+    x.setAttribute("controls", "controls");
+    document.body.appendChild(x);
+    function upVolume() {
+        x.volume=x.volume+0.1;
+    }
+
+    function downVolume() {
+        x.volume=x.volume-0.1;
+    }
+
+    function mute() {
+        x.muted=true;
+    }
+
+    function reverse() {
+        console.log(x.currentTime)
+        x.src=x.src+"#t="+(x.currentTime-10);
+    }
+
+    function advance() {
+        console.log(x.currentTime)
+        x.src=x.src+"#t="+(x.currentTime+10);
+    }
+
+    function play() {
+        x.play();
+    }
+
+    function pause() {
+        x.pause();
+    }
+</script>
+<center><span><button id="up" onclick="upVolume()">Subir</button></span><span><button id="mute" onclick="mute()">Silenciar</button></span>
+    <span><button id="down" onclick="downVolume()">Bajar</button></span></center>
+<center><span><button id="reverse" onclick="reverse()"><<</button></span><span><button id="play" onclick="reverse()">Play
+</button></span><span><button id="pause" onclick="reverse()">||</button></span><span><button id="advance" onclick="advance()">
+    >></button>
+</span></center>
+</body>
+</html>
