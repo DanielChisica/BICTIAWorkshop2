@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 5</title>
+    <script type="text/javascript">
+        var turn="x";
+
+        function changeTurn() {
+            if (turn=="x"){
+                turn="o"
+            } else {
+                turn="x"
+            }
+        }
+
+        function setWinner() {
+            alert("El ganador es: "+turn)
+            document.location.reload(true);
+        }
+
+        function onkey1() {
+            if(document.getElementById("1").innerText=="")
+            {
+                document.getElementById("1").innerText=turn;
+                if (
+                    (document.getElementById("2").innerText==turn && document.getElementById("3").innerText==turn) ||
+                    (document.getElementById("4").innerText==turn && document.getElementById("7").innerText==turn) ||
+                    (document.getElementById("5").innerText==turn && document.getElementById("9").innerText==turn)
+                ){
+                    setWinner();
+                } else {
+                    changeTurn();
+                }
+            }
+        }
+
+        function onkey2() {
+            if(document.getElementById("2").innerText=="")
+            {
+                document.getElementById("2").innerText=turn;
+                if (
+                    (document.getElementById("1").innerText==turn && document.getElementById("3").innerText==turn) ||
+                    (document.getElementById("5").innerText==turn && document.getElementById("8").innerText==turn)
+                ){
+                    setWinner();
+                } else {
+                    changeTurn();
+                }
+            }
+        }
+
+        function onkey3() {
+            if(document.getElementById("3").innerText=="")
+            {
+                document.getElementById("3").innerText=turn;
+                if (
+                    (document.getElementById("1").innerText==turn && document.getElementById("2").innerText==turn) ||
+                    (document.getElementById("6").innerText==turn && document.getElementById("9").innerText==turn) ||
+                    (document.getElementById("5").innerText==turn && document.getElementById("7").innerText==turn)
+                ){
+                    setWinner();
+                } else {
+                    changeTurn();
+                }
+            }
+        }
+
+        function onkey4() {
+            if(document.getElementById("4").innerText=="")
+            {
+                document.getElementById("4").innerText=turn;
+                if (
+                    (document.getElementById("5").innerText==turn && document.getElementById("6").innerText==turn) ||
+                    (document.getElementById("1").innerText==turn && document.getElementById("7").innerText==turn)
+                ){
+                    setWinner();
+                } else {
+                    changeTurn();
+                }
+            }
+        }
+
+        function onkey5() {
+            if(document.getElementById("5").innerText=="")
+            {
+                document.getElementById("5").innerText=turn;
+                if (
+                    (document.getElementById("4").innerText==turn && document.getElementById("6").innerText==turn) ||
+                    (document.getElementById("2").innerText==turn && document.getElementById("8").innerText==turn) ||
+                    (document.getElementById("1").innerText==turn && document.getElementById("9").innerText==turn) ||
+                    (document.getElementById("3").innerText==turn && document.getElementById("7").innerText==turn)
+                ){
+                    setWinner();
+                } else {
+                    changeTurn();
+                }
+            }
+        }
+
+        function onkey6() {
+            if(document.getElementById("6").innerText=="")
+            {
+                document.getElementById("6").innerText=turn;
+                if (
+                    (document.getElementById("4").innerText==turn && document.getElementById("5").innerText==turn) ||
+                    (document.getElementById("3").innerText==turn && document.getElementById("9").innerText==turn)
+                ){
+                    setWinner();
+                } else {
+                    changeTurn();
+                }
+            }
+        }
+
+        function onkey7() {
+            if(document.getElementById("7").innerText=="")
+            {
+                document.getElementById("7").innerText=turn;
+                if (
+                    (document.getElementById("8").innerText==turn && document.getElementById("9").innerText==turn) ||
+                    (document.getElementById("1").innerText==turn && document.getElementById("4").innerText==turn) ||
+                    (document.getElementById("3").innerText==turn && document.getElementById("5").innerText==turn)
+                ){
+                    setWinner();
+                } else {
+                    changeTurn();
+                }
+            }
+        }
+
+        function onkey8() {
+            if(document.getElementById("8").innerText=="")
+            {
+                document.getElementById("8").innerText=turn;
+                if (
+                    (document.getElementById("7").innerText==turn && document.getElementById("9").innerText==turn) ||
+                    (document.getElementById("2").innerText==turn && document.getElementById("5").innerText==turn)
+                ){
+                    setWinner();
+                } else {
+                    changeTurn();
+                }
+            }
+        }
+
+        function onkey9() {
+            if(document.getElementById("9").innerText=="")
+            {
+                document.getElementById("9").innerText=turn;
+                if (
+                    (document.getElementById("7").innerText==turn && document.getElementById("8").innerText==turn) ||
+                    (document.getElementById("3").innerText==turn && document.getElementById("6").innerText==turn) ||
+                    (document.getElementById("1").innerText==turn && document.getElementById("5").innerText==turn)
+                ){
+                    setWinner();
+                } else {
+                    changeTurn();
+                }
+            }
+        }
+    </script>
+    <style>
+        .square {
+            border: 1px outset blue;
+            background-color: lightBlue;
+            height:50px;
+            width:50px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <center> <div id="board" style="text-align:center;">
+        <table style="width:500px" class="table">
+            <tr>
+                <td><button id="1" onclick="onkey1()" class="square"> </button></td>
+                <td><button id="2" onclick="onkey2()" class="square"> </button></td>
+                <td><button id="3" onclick="onkey3()" class="square"> </button></td>
+            </tr>
+            <tr>
+                <td><button id="4" onclick="onkey4()" class="square"> </button></td>
+                <td><button id="5" onclick="onkey5()" class="square"> </button></td>
+                <td><button id="6" onclick="onkey6()" class="square"> </button></td>
+            </tr>
+            <tr>
+                <td><button id="7" onclick="onkey7()" class="square"> </button></td>
+                <td><button id="8" onclick="onkey8()" class="square"> </button></td>
+                <td><button id="9" onclick="onkey9()" class="square"> </button></td>
+            </tr>
+        </table>
+    </div>
+    </center>
+</body>
+</html>

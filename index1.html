@@ -32,12 +32,12 @@
 
     function reverse() {
         console.log(x.currentTime)
-        x.src=x.src+"#t="+(x.currentTime-10);
+        x.currentTime=x.currentTime-10;
     }
 
     function advance() {
         console.log(x.currentTime)
-        x.src=x.src+"#t="+(x.currentTime+10);
+        x.currentTime=x.currentTime+10;
     }
 
     function play() {
@@ -50,8 +50,8 @@
 </script>
 <center><span><button id="up" onclick="upVolume()">Subir</button></span><span><button id="mute" onclick="mute()">Silenciar</button></span>
     <span><button id="down" onclick="downVolume()">Bajar</button></span></center>
-<center><span><button id="reverse" onclick="reverse()"><<</button></span><span><button id="play" onclick="reverse()">Play
-</button></span><span><button id="pause" onclick="reverse()">||</button></span><span><button id="advance" onclick="advance()">
+<center><span><button id="reverse" onclick="reverse()"><<</button></span><span><button id="play" onclick="play()">Play
+</button></span><span><button id="pause" onclick="pause()">||</button></span><span><button id="advance" onclick="advance()">
     >></button>
 </span></center>
 </body>
